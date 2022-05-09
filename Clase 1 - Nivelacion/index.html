@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        picture {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 0 15px #555;
+        }
+        img.disabled {
+            opacity: 0.3;
+        }
+    </style>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <h1>Bienvenidos al Curso de React</h1>
+    <!-- <picture>
+        <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="img"/>
+        Lego
+    </picture> -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.getElementById('root')
+        console.log(root)
+
+        // const Avatar = (params) => {
+        //     const src = `https://randomuser.me/api/portraits/lego/${params.id}.jpg`
+
+        //     return `<picture>
+        //                 <img src="${src}" alt="img"/>
+        //                 ${params.name}
+        //             </picture>`
+        // }
+
+        // root.innerHTML = Avatar({ id: 1, name: 'Seba'})
+        // root.innerHTML += Avatar({ id: 3, name: 'Matias'})
+        // root.innerHTML += Avatar({ id: 7, name: 'Astrid'})
+
+        // root.querySelectorAll('img').forEach(img => {
+        //     img.addEventListener('click', () => {
+        //         img.classList.toggle('disabled')
+        //     })
+        // })
+
+        const r = React.createElement
+
+        const Avatar = () => {
+            const src = `https://randomuser.me/api/portraits/lego/1.jpg`
+
+            return r('picture', {}, [r('img', { src, alt: 'lego 1' }), 'Ivan'])
+        }
+
+        const AvatarJSX = () => {
+            const src = `https://randomuser.me/api/portraits/lego/1.jpg`
+
+            return (
+                <picture>
+                    <img src={src} alt='Lego 1'/>
+                    Mauricio
+                </picture>
+            )
+        }
+
+        ReactDOM.render(r(AvatarJSX), root)
+    </script>
+</body>
+</html>
