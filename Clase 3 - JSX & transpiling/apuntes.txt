@@ -1,0 +1,23 @@
+polyfill
+
+adapto una función que un buscador puede que no tenga, en este caso reemplazo el "*" de multiplicar
+pr un método:
+
+Number.prototype.multiplicar = function (num) {
+  let accu = 0
+  
+  for(let i = 0; i < num; i++) {
+    accu += this
+  }
+  
+  return accu
+}
+
+const myNum = 5
+const myNum2 = 10
+
+const result = myNum.multiplicar(5)
+const result2 = myNum2.multiplicar(20)
+
+console.log(result)
+console.log(result2)
