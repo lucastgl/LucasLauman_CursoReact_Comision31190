@@ -1,0 +1,35 @@
+.NavBar{
+    display: flex;
+    align-items: center;
+    background-color: #282c34;
+}
+
+.Listado{
+    color: rgb(185, 185, 185);
+    display: flex;
+}
+
+.Listado li{
+    margin-right: 20px;
+}
+
+.App-logo{
+    height: 50px;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 6s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
