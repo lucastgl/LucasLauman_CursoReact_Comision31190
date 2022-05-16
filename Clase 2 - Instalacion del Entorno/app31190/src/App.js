@@ -19,6 +19,7 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* < AvatarJSX /> */}
+        <h1>My Way</h1>
         < NavBar />
       </header>
     </div>

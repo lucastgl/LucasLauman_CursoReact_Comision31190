@@ -13,3 +13,23 @@
   color: white;
 } 
 
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+  color: rgb(190, 189, 189);
+  animation: titulo 3s linear;
+}
+
+@keyframes titulo {
+  0% {
+    opacity: 0.05;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
