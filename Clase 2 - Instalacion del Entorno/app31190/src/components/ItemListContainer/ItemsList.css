@@ -1,0 +1,22 @@
+.ItemList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 20vh;
+    background-color: #545a66;
+}
+
+.comingSoon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    border-radius: 16px;
+    background-color: #282c34;
+}
+
+.comingSoon p{
+    margin: 15px 5px;
+    text-align: center;
+}

@@ -21,3 +21,34 @@ const result2 = myNum2.multiplicar(20)
 
 console.log(result)
 console.log(result2)
+
+==========
+
+operador ternario
+
+const condition = true;
+let reult = null
+
+if (condition) {
+  result = "correct"; 
+}else{
+  result = "incorrect";
+}
+console.log(result);
+
+console.log(`${condition ? 'correct' : 'incorrect'}`);
+
+
+===============
+
+const vehiculo ={
+  marca: 'bmw',
+  modelo: '325',
+  year: 2010
+}
+
+const vehiculo2 = {
+  ...vehiculo
+}
+
+//vehiculo2 tendrá en sus campos los mismos valores que vehiculo, pero estos se pueden editar
