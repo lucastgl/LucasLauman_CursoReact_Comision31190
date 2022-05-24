@@ -1,5 +1,7 @@
+import './Button.css'
+
 const Button = (props) => {
-    return <button style={{color: props.color}} onClick={props.handleClick}>{props.label}</button>
+    return <button className='botonIncDec' onClick={props.handleClick}>{props.children}</button>
 }
 
 export default Button;

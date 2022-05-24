@@ -1,4 +1,5 @@
-import './ItemsList.css'
+import './ItemsList.css';
+
 
 const ItemListContainer = (props) =>{
     return(
@@ -6,8 +7,7 @@ const ItemListContainer = (props) =>{
             <div className='comingSoon'>
                 <p>{props.greeting}</p>
             </div>
-        </div>
-
+        </div> 
     )
 }
 

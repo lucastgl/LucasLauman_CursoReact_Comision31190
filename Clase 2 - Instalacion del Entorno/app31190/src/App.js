@@ -1,28 +1,23 @@
+//import CountFunction from './components/CountFunction/CountFunction';
+//import { useState } from 'react';
 import './App.css';
-// import CountFunction from './components/CountFunction/CountFunction';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemsList';
-// const AvatarJSX = () => {
-//   const src = `https://randomuser.me/api/portraits/lego/1.jpg`
+import ItemCount from './components/ItemCount/ItemCount';
 
-//   return (
-//       <picture>
-//           <img src={src} alt='Lego 1'/>
-//           Mauricio
-//       </picture>
-//   )
-// }
 
 function App() {
+  //const [show, setShow] = useState(true);
   return (
     <div className="App">
       <header className="App-header">
-        {/* < AvatarJSX /> */}
         <h1>My Way </h1>
         < NavBar />
-        < ItemListContainer greeting="Próximamente nuevos productos" />
-        {/* <CountFunction/> */}
-        {/* <CountFunction color="blue" text="Contador hecho con funciones (esto viene como parametro)"/> */}
+        < ItemListContainer greeting="Próximamente nuevos productos"/>
+        < ItemCount />         
+        {/* <button onClick={()=> setShow(!show)}>Mostrar o no mostrar</button>
+        {show ? < CountFunction /> : null} 
+        <CountFunction color="blue" text="Contador hecho con funciones (esto viene como parametro)"/> */}
       </header>
     </div>
   );

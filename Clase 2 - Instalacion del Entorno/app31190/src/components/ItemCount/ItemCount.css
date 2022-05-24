@@ -1,0 +1,48 @@
+.Item{
+    background-color: #545a66;
+    display: flex;
+    justify-content: center;
+}
+
+.PrototypeItemContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    width: 20vw;
+    border-radius: 16px;
+    margin: 0 0 50px 0;
+}
+
+.titleProduct{
+    margin: 10px 0 0 0;
+}
+
+.bloqueContador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    margin: 10px;
+}
+
+.cifraContador{
+    background-color: antiquewhite;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+    margin: 0px 10px 0px 10px;
+    padding: 0 30px;
+}
+
+.agregarCarritoButton{
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 16px;
+    width: 50%;
+    padding: 12px;
+    background: #26a;
+    color: #fff;
+}

@@ -1,5 +1,5 @@
 import CarWidget from '../CarWidget/CarWidget';
-import './NavBar.css'
+import './NavBar.css';
 
 const NavBar = () => {
     return (

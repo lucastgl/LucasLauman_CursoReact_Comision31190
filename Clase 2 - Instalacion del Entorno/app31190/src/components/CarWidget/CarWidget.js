@@ -1,4 +1,4 @@
-import './CarWidget.css'
+import './CarWidget.css';
 
 const CarWidget = () => {
     return(
