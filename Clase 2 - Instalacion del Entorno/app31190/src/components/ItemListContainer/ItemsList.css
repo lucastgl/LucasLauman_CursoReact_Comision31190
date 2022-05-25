@@ -1,9 +1,10 @@
 .ItemList{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 20vh;
     background-color: #545a66;
 }
 

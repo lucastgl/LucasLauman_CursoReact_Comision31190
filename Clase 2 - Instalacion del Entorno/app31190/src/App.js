@@ -3,7 +3,7 @@
 import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemsList';
-import ItemCount from './components/ItemCount/ItemCount';
+// import ItemCount from './components/ItemCount/ItemCount';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <h1>My Way </h1>
         < NavBar />
         < ItemListContainer greeting="Próximamente nuevos productos"/>
-        < ItemCount />         
+        {/* < ItemCount />          */}
         {/* <button onClick={()=> setShow(!show)}>Mostrar o no mostrar</button>
         {show ? < CountFunction /> : null} 
         <CountFunction color="blue" text="Contador hecho con funciones (esto viene como parametro)"/> */}
