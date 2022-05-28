@@ -1,4 +1,4 @@
-import './ItemsList.css';
+import './ItemsListContainer.css';
 import { useEffect, useState } from 'react'
 import { getProducts } from '../../asyncmock';
 import ItemList from '../ItemList/ItemList';

@@ -2,7 +2,7 @@
 //import { useState } from 'react';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemsList';
+import ItemListContainer from './components/ItemListContainer/ItemsListContainer';
 // import ItemCount from './components/ItemCount/ItemCount';
 
 
