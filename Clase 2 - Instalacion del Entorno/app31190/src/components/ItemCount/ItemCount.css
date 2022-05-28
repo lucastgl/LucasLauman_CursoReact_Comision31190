@@ -2,6 +2,7 @@
     background-color: #545a66;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .PrototypeItemContainer{

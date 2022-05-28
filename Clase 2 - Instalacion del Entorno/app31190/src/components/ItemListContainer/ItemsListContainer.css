@@ -1,9 +1,8 @@
 .ItemList{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: 20vh;
     background-color: #545a66;
 }
 
@@ -11,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: 20vw;
     border-radius: 16px;
     background-color: #282c34;
 }

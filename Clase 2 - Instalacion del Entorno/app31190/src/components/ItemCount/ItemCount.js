@@ -3,7 +3,7 @@ import Button from '../CountFunction/Button/Button';
 import './ItemCount.css'
 
 const ItemCount = (props) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(props.initial);
 
     const decrement = () =>{
         if(count > 0){
@@ -11,9 +11,14 @@ const ItemCount = (props) => {
         }
     }
 
-
     const increment = () =>{
-        setCount(count + 1);
+        if(props.stock > count){
+            setCount(count + 1);
+        }
+    }
+
+    const AgregarCantidad = () =>{
+        props.onAdd(count);
     }
     
     return(
@@ -25,7 +30,7 @@ const ItemCount = (props) => {
                     <p className='cifraContador'>{count}</p>
                     <Button handleClick={increment} children='+'/>
                 </div>
-                <button className='agregarCarritoButton'>Agregar al Carrito</button>
+                <button className='agregarCarritoButton' onClick={AgregarCantidad}>Agregar al Carrito</button>
             </div>
         </div>
     )
