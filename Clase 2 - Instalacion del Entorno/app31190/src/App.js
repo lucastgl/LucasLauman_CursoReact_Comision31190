@@ -1,9 +1,10 @@
-//import CountFunction from './components/CountFunction/CountFunction';
-//import { useState } from 'react';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemsListContainer';
-// import ItemCount from './components/ItemCount/ItemCount';
+// import ItemListContainer from './components/ItemListContainer/ItemsListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+//import MercadoLibre from './components/MercadoLibre/MercadoLibre';
+
 
 
 function App() {
@@ -12,12 +13,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>My Way </h1>
+        
+        {/* COMPONENTES EFECTIVOS */}
         < NavBar />
-        < ItemListContainer greeting="Próximamente nuevos productos"/>
-        {/* < ItemCount />          */}
-        {/* <button onClick={()=> setShow(!show)}>Mostrar o no mostrar</button>
-        {show ? < CountFunction /> : null} 
-        <CountFunction color="blue" text="Contador hecho con funciones (esto viene como parametro)"/> */}
+        < ItemDetailContainer />
+        {/* < ItemListContainer greeting="Próximamente nuevos productos"/> */}
+
+
+
+        {/* EJEMPLO DE CLASE */}
+        {/* <MercadoLibre/> */}
       </header>
     </div>
   );

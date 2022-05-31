@@ -1,20 +1,24 @@
-import ItemCount from '../ItemCount/ItemCount';
+// import ItemCount from '../ItemCount/ItemCount';
 import './Item.css'
 
-const Item = (props) => {
+const Item = ({producto}) => {
 
-    const onAdd = (canidad) =>{
-        if(canidad !== 0){
-            console.log(`Se han agregado ${canidad} ${props.name} al carrito`)
-        }
-    } 
+    // console.log(props.producto);
+
+    // const onAdd = (canidad) =>{
+    //     if(canidad !== 0){
+    //         console.log(`Se han agregado ${canidad} ${producto.name} al carrito`)
+    //     }
+    // } 
 
     return(
         <div className='Card'>
-            <h1>{props.name}</h1>
-            <img src={props.img} alt='imagen del artículo'></img>
-            <p> price: {props.price}</p>
-            < ItemCount stock={props.stock} onAdd={onAdd}/>
+            <h1>{producto.name}</h1>
+            <img src={producto.img} alt='imagen del artículo'></img>
+            <p> price: {producto.price}</p>
+            <p> material: {producto.material}</p>
+            <p> MADE IN {producto.origen}</p>
+            {/* < ItemCount stock={producto.stock} onAdd={onAdd}/> */}
         </div>
     )
 }

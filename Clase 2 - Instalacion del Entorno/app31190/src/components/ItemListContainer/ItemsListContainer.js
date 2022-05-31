@@ -16,9 +16,11 @@ const ItemListContainer = (props) =>{
 
     return(
         <div className='ItemList'>
-            {/* <div className='comingSoon'>
+            {/* 
+            <div className='comingSoon'>
                 <p>{props.greeting}</p>
-            </div> */}
+            </div> 
+            */}
             < ItemList products={products}/>
 
             {/* si quiero escribir código js tengo que abrir llaves */}

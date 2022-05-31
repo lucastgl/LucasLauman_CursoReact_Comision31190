@@ -1,0 +1,18 @@
+.List{
+    margin-top: 30px;
+}
+
+.List h1{
+    font-family: 'Courier New', Courier, monospace;
+    animation: none;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.CardSection{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vw;
+    flex-wrap: wrap;
+}
