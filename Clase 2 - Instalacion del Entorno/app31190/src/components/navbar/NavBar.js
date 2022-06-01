@@ -1,3 +1,4 @@
+import { Link /*, NavLink*/ } from 'react-router-dom';
 import CarWidget from '../CarWidget/CarWidget';
 import './NavBar.css';
 
@@ -11,13 +12,15 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="elementsHead">
-                <ul className="Listado" type="none">
-                    <li>Sneakers</li>
-                    <li>Hodies</li>
-                    <li>Joggers</li>
-                </ul>
+                <div className="Listado">
+                    <Link to='/category/Sneakers' className='ListadoHijo'>Sneakers</Link>
+                    <Link to='/category/Hodies' className='ListadoHijo'>Hodies</Link>
+                    <Link to='/category/Joggers'className='ListadoHijo'>Joggers</Link>
+                    {/* <NavLink to='/category/Sneakers' className={({isActive}) => isActive ? 'ActiveListadoHijo' : 'ListadoHijo'}>Sneakers</NavLink> */}
+                </div>
                 <div className='divBotones'>
-                    <button className="botonNavBar">INICIO</button>
+                    {/* <button className="botonNavBar">INICIO</button> */}
+                    <Link to={'/'} className="botonNavBar">INICIO</Link>
                     <button className="botonNavBar">LOGIN</button>
                     < CarWidget />
                 </div>

@@ -26,6 +26,19 @@
 
 .Card p{
     margin: 0px 10px 0px 10px;
+    font-size: 25px;
+}
+
+.Detalle{
+    color: rgb(184, 181, 181);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.Detalle:hover{
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s;
 }
 
 .Card:hover {

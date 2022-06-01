@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+  font-size: 30px;
 }
 
 .Listado{
@@ -50,11 +51,13 @@
   flex-grow: 1;
 }
 
-.Listado li{
+.ListadoHijo{
   margin-right: 60px;
+  text-decoration: none;
+  color: rgb(201, 201, 201);
 }
 
-.Listado li:hover{
+.ListadoHijo:hover{
  color: #fff;
  font-weight: bolder;
  transition: color 0.3s;
@@ -72,10 +75,13 @@
   margin:  0 10px;
   border: none;
   border-radius: 16px;
-  width: 50%;
+  width: 30%;
   padding: 12px;
   background: #26a;
   color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
