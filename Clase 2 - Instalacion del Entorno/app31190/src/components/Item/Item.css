@@ -30,15 +30,17 @@
 }
 
 .Detalle{
-    color: rgb(184, 181, 181);
+    color: #282c34;
     text-decoration: none;
     margin: 10px 0;
+    padding: 8px;
+    background-color: rgb(184, 181, 181);
+    border-radius: 10px;
 }
 
 .Detalle:hover{
-    font-weight: bold;
-    color: white;
-    transition: color 0.3s;
+    font-weight:900;
+    transition: font-weight 0.3s;
 }
 
 .Card:hover {

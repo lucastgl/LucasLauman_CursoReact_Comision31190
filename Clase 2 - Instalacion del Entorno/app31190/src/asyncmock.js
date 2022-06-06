@@ -14,7 +14,7 @@ const products = [
         description:'Jogger Adidas Negro c/ tiras blancas'
     },
     { id: '2',origen: 'USA', name: 'Hoodie Cat Samurai',material: 'Algodón', price: 3000, category: 'Hodies', img:'https://www.dhresource.com/f2/albu/g9/M00/3A/90/rBVaVV5Tge2AJoLHAAGpJ_vFyXI509.jpg', stock: 16, description:'Hoodie Negro c/ gato Samurai'},
-    { id: '3',origen: 'USA', name: 'Adidas Prosphere B/W',material: 'Suela de plástico recilado con tela impermeable', price: 12000, category: 'Sneakers', img:'https://i.pinimg.com/originals/26/a5/d7/26a5d7d7aad41344fe4f374f0da10b08.jpg', stock: 10, description:'Adidas Prosphere B&W'}
+    { id: '3',origen: 'USA', name: 'Adidas Prosphere B/W',material: 'Suela de plástico recilado c/tela impermeable', price: 12000, category: 'Sneakers', img:'https://i.pinimg.com/originals/26/a5/d7/26a5d7d7aad41344fe4f374f0da10b08.jpg', stock: 10, description:'Adidas Prosphere B&W'}
 ]
 
 export const getProducts = () => {

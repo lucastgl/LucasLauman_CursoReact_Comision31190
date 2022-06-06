@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css'
 
 const Item = (props) => {
 
-    const onAdd = (canidad) =>{
-        if(canidad !== 0){
-            console.log(`Se han agregado ${canidad} ${props.name} al carrito`)
-        }
-    } 
+    // const [quantity, setQuantity] = useState(0);
+
+    // const onAdd = (cantidad) =>{
+    //     if(cantidad >= 0){
+    //         console.log(`Se han agregado ${cantidad} ${props.name} al carrito`);
+    //         setQuantity(cantidad);
+    //     }
+    // }
 
     return(
         <div className='Card'>
@@ -16,7 +20,7 @@ const Item = (props) => {
             <img src={props.img} alt='imagen del artículo'></img>
             <p style={{color: 'white'}}> price: {props.price}</p>
             < Link to={`/detail/${props.id}`} className='Detalle'>Ver detalle del artículo</Link>
-            < ItemCount stock={props.stock} onAdd={onAdd}/>
+            {/*{quantity > 0 ? <Link to=' /cart'>Finalizar compra</Link> : <ItemCount stock={props.stock} onAdd={onAdd}/>} */}
         </div>
     )
 }

@@ -1,7 +1,3 @@
-.ListDetail{
-    margin-top: 10px;
-}
-
 .ListDetail h1{
     font-family: 'Courier New', Courier, monospace;
     animation: none;
@@ -10,12 +6,17 @@
     margin-bottom: 30px;
 }
 
+.ListDetail h2{
+    /* margin-top: 10px; */
+    text-align: center;
+    color: aliceblue;
+    font-size: 55px;
+}
+
 .CardSectionOfDetail{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 80vw;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     color: aliceblue;
     font-size: 30px;
 }
@@ -24,6 +25,34 @@
 }
 
 .CardSectionOfDetail img{
-    height: 30vh;
-    border-radius: 10px;
+    height: 50vh;
+    margin: 20px 0;
+}
+
+.ShowAndSelection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ShowAndSelection .EndBuy{
+    text-decoration: none;
+    color: beige;
+}
+
+.ShowAndSelection .EndBuy:hover{
+    font-size: 35px;
+    transition: font-size 0.2s;
+}
+
+.Detalles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 150px;
+    margin-left: 50px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 35px;
 }

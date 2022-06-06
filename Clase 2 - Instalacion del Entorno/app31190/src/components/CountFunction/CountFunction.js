@@ -38,7 +38,7 @@ const CountFunction = (props) => {
         }
     }
 
-    console.log("me ejecuto antes del montaje");
+    // console.log("me ejecuto antes del montaje");
     
     return(
         <div style={{display: "flex"}}>
