@@ -10,8 +10,6 @@ const ItemListContainer = (props) =>{
 
     const { categoryId } = useParams();
 
-    console.log(categoryId);
-
     useEffect(() => {
         if(!categoryId){
             getProducts().then(response => {

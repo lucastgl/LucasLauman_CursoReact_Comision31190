@@ -1,4 +1,21 @@
+.CarWidget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#26a ;
+    border-radius: 16px;
+    margin-left: 15px;
+    padding-right: 10px;
+    color: #fff;
+
+}
+
+.CarWidget p{
+    margin: 0;
+}
+
 .carrito{
     height: 5vh;
     margin: 0 10px;
 }
+

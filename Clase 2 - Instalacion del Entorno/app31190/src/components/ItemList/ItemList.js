@@ -2,8 +2,6 @@ import './ItemList.css'
 import Item from "../Item/Item";
 
 const ItemList = ({products}) =>{
-    // console.log(products)
-
     return(
         <div className='List'>
             <h1>Lista de Artículos</h1>

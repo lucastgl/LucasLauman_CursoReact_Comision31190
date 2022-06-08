@@ -14,11 +14,11 @@ const ItemDetailContainer = () =>{
         getProductById( productId ).then(response => {
             setProduct(response)
         })
-    }, [])
+    }, [productId])
 
     return(
         <div className='ItemDetailContainer'>
-            <ItemDetail product={product}/>
+            <ItemDetail {...product}/>
         </div> 
     )
 }

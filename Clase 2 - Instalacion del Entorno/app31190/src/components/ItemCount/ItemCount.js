@@ -24,7 +24,6 @@ const ItemCount = (props) => {
     return(
         <div className='Item'>
             <div className='PrototypeItemContainer'>
-                {/* <p className='titleProduct'>Joggin</p> */}
                 <div className='bloqueContador'>
                     <Button handleClick={decrement} children='-'/>
                     <p className='cifraContador'>{count}</p>
