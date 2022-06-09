@@ -1,0 +1,10 @@
+.ArticuloAgregado{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.ArticuloAgregado div{
+    margin-left: 10px;
+    color: white;
+}

@@ -7,7 +7,7 @@ import CartContext from '../../context/CartContext';
 const ItemDetail = ({id, name, img, stock, material, origen, price}) =>{
     const [quantity, setQuantity] = useState(0);
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, getProduct } = useContext(CartContext)
 
     const onAdd = (cantidad) =>{
         if(cantidad > 0){
@@ -23,7 +23,9 @@ const ItemDetail = ({id, name, img, stock, material, origen, price}) =>{
             <div className='CardSectionOfDetail'>
                 <div className='ShowAndSelection'>
                     <img src={img} alt='imagen del artículo'></img>
-                    {quantity > 0 ? <Link to='/cart' className='EndBuy'>Finalizar compra</Link> : <ItemCount stock={stock} onAdd={onAdd}/>}
+                    {quantity > 0 
+                        ? <Link to='/cart' className='EndBuy'>Finalizar compra</Link> 
+                        : <ItemCount stock={stock} onAdd={onAdd} initial={getProduct(id)?.quantity}/>}
                 </div>
                 <div className='Detalles'>
                     <h1>{name}</h1>

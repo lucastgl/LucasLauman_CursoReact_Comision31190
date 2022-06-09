@@ -17,11 +17,15 @@ export const CartContextProvider = ({ children }) => {
     
         return accu;
     }
+
+    const getProduct = (id) =>{
+        return cart.find(prod => prod.id === id)
+    }
     
     return(
-        <CartContextProvider.Provider value={{cart, addItem, getQuantity}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, getProduct}}>
             {children}
-        </CartContextProvider.Provider>
+        </CartContext.Provider>
     )
 }
 
