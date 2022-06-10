@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Button from '../CountFunction/Button/Button';
 import './ItemCount.css'
 
-const ItemCount = (props) => {
-    const [count, setCount] = useState(1);
+const ItemCount = ( {stock, onAdd, initial = 1 }) => {
+    const [count, setCount] = useState(initial);
 
     const decrement = () =>{
         if(count > 0){
@@ -12,13 +12,13 @@ const ItemCount = (props) => {
     }
 
     const increment = () =>{
-        if(props.stock > count){
+        if(stock > count){
             setCount(count + 1);
         }
     }
 
     const AgregarCantidad = () =>{
-        props.onAdd(count);
+        onAdd(count);
     }
     
     return(

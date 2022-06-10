@@ -1,0 +1,9 @@
+.ProductOnCart{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.ProductOnCart div{
+    margin: 10px 10px;
+}
