@@ -44,6 +44,7 @@ export const CartContextProvider = ({ children }) => {
 
     const removeItem = (id) =>{
         return cart.filter( prod => prod.id !== id)
+        
     }
     
     return(
