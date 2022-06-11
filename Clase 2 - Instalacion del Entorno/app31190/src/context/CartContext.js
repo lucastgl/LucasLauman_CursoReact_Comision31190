@@ -35,20 +35,25 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const isInCart = (id) =>{
-        return cart.some(prod => prod.id === id)
+        return cart.some(prod => prod.id === id);
     }
 
     const getProduct = (id) => {
-        return cart.find(prod => prod.id ===id)
+        return cart.find(prod => prod.id === id);
     }
 
     const removeItem = (id) =>{
-        return cart.filter( prod => prod.id !== id)
-        
+        const newCart =  cart.filter( prod => prod.id !== id);
+        setCart(newCart);
+    }
+
+    const cleanCart = () =>{
+        const newCart =  cart.filter( prod => prod.id === -1);
+        setCart(newCart);
     }
     
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, getProduct, removeItem}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, getProduct, removeItem, cleanCart}}>
             {children}
         </CartContext.Provider>
     )

@@ -7,3 +7,23 @@
 .ProductOnCart div{
     margin: 10px 10px;
 }
+
+.VaciarCarritoContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.VaciarCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    background-color: aliceblue;
+    border-radius: 16px;
+    border-style: none;
+}
+
+.VaciarCarrito .tacho{
+    margin-left: 5px;
+    height: 3vh;
+}
