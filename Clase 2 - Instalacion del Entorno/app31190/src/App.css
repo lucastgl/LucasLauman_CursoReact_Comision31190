@@ -21,6 +21,9 @@ h1{
   font-size: 50px;
   font-style: italic;
   color: rgb(255, 255, 255);
+}
+
+.h1Animado{
   animation: titulo 3s linear;
 }
 

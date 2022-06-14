@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <CartContextProvider>
         <header className="App-header">
-          <h1>My Way </h1>
+          <h1 className='h1Animado'>My Way </h1>
         </header>
         <BrowserRouter>
           < NavBar />

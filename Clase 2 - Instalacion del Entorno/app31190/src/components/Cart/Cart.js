@@ -1,16 +1,21 @@
 import './Cart.css'
 import { useContext } from "react";
+import { Link } from 'react-router-dom'
 import CartContext from "../../context/CartContext";
+import CartCleaner from '../CartCleaner/CartCleaner';
+import CartItem from '../CartItem/CartItem';
+
 
 const Cart = () => {
 
-    const { cart, removeItem, cleanCart } = useContext(CartContext)
+    const { cart } = useContext(CartContext);
 
     return(
         <div>
-            <h1>Cart</h1>
-            <div>
-                {cart.map(prod => {
+            <h1 className='CartTitle'>Cart</h1>
+            <div className='CartItemContainer'>
+                {cart.map(prod => <CartItem key={prod.id} {...prod}/>)}
+                {/* {cart.map(prod => {
                     return(
                         <div className="ProductOnCart" key={prod.id}>
                             <div>{prod.name}</div>
@@ -20,13 +25,16 @@ const Cart = () => {
                             <button onClick={()=> removeItem(prod.id)}>X</button>
                         </div>
                     )
-                })}
-                <div className='VaciarCarritoContainer'>
-                    <button onClick={() => cleanCart()} className='VaciarCarrito'>
-                       <p>Vaciar Carrito</p>
-                        <img src='./images/reciclaje.png' alt="imagen del teacho" className='tacho'/>
-                    </button>
-                </div>
+                })} */}
+                {
+                    cart.length > 0
+                        ? <CartCleaner/>
+                        :   <div className='CartEmpity'>
+                                <p>Aún no hay nada por aquí</p>
+                                <Link to='/' className='LinkCartEmpity'>Ver artículos</Link>
+                            </div>
+
+                }
             </div>
         </div>
     )

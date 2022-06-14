@@ -1,29 +1,30 @@
-.ProductOnCart{
-    display: flex;
-    justify-content: center;
+.CartTitle{
+    margin-top: 8vh;
+}
+
+p{
+    text-align: center;
     color: white;
 }
 
-.ProductOnCart div{
-    margin: 10px 10px;
-}
-
-.VaciarCarritoContainer{
+.CartItemContainer{
     display: flex;
-    justify-content: center;
-}
-
-.VaciarCarrito{
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 10px 0px;
-    background-color: aliceblue;
-    border-radius: 16px;
-    border-style: none;
+    justify-content: center;
 }
 
-.VaciarCarrito .tacho{
-    margin-left: 5px;
-    height: 3vh;
+.CartEmpity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LinkCartEmpity{
+    text-decoration: none;
+    color: white;
+    background-color:rgb(40, 42, 44);
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
