@@ -1,9 +1,10 @@
-import { createContext, useState  } from "react";
+import { createContext, useState } from "react";
 
 const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
+
 
     const addItem = (productToAdd) => {
 
@@ -24,6 +25,7 @@ export const CartContextProvider = ({ children }) => {
             setCart(newCart)
         }
     }
+
     
     const getQuantity = () => {
         let accu = 0;

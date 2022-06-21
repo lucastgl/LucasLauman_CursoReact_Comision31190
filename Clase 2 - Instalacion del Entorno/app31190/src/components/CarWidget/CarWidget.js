@@ -11,7 +11,7 @@ const CarWidget = () => {
 
     return(
         <Link to='/cart' className='CarWidget'>
-            <img src="./images/icono-de-carrito-de-compras.png" className="carrito" alt="carrito de compras"></img>
+            <img src="../../icoCarritoCompras.png" className="carrito" alt="carrito"></img>
             <p>{quantity}</p>
         </Link>
     )

@@ -10,6 +10,17 @@ const Cart = () => {
 
     const { cart } = useContext(CartContext);
 
+    // const [totalToPay, setTotalToPay] = useState(0)
+
+    // const updateTotalToPay = () => {
+    //     let total = 0
+    //     cart.forEach(prod => {
+    //         total += prod.quantity * prod.price
+    //     })
+        
+    //     setTotalToPay(total)
+    // }
+
     return(
         <div>
             <h1 className='CartTitle'>Cart</h1>
@@ -28,7 +39,9 @@ const Cart = () => {
                 })} */}
                 {
                     cart.length > 0
-                        ? <CartCleaner/>
+                        ?   <div>
+                                <CartCleaner/>
+                            </div>
                         :   <div className='CartEmpity'>
                                 <p>Aún no hay nada por aquí</p>
                                 <Link to='/' className='LinkCartEmpity'>Ver artículos</Link>

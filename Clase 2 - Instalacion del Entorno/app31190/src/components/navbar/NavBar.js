@@ -1,8 +1,13 @@
 import './NavBar.css';
 import { Link /*, NavLink*/ } from 'react-router-dom';
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 import CarWidget from '../CarWidget/CarWidget';
 
 const NavBar = () => {
+
+    const { cart } = useContext(CartContext);
+
     return (
         <nav className="NavBar">
             <div className="reactHead">
@@ -22,7 +27,11 @@ const NavBar = () => {
                     {/* <button className="botonNavBar">INICIO</button> */}
                     <Link to={'/'} className="botonNavBar">INICIO</Link>
                     <button className="botonNavBar">LOGIN</button>
-                    < CarWidget />
+                    {
+                        cart.length > 0
+                        ?    < CarWidget />
+                        :   <></>
+                    }
                 </div>
             </div>
         </nav>
