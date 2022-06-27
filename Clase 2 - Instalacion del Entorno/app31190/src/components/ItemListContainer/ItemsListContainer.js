@@ -1,27 +1,50 @@
+// import { getProducts, getProductsCategory } from '../../asyncmock';
 import './ItemsListContainer.css';
-import { useEffect, useState } from 'react'
-import { getProducts, getProductsCategory } from '../../asyncmock';
-import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../service/firebase';
 
 const ItemListContainer = (props) =>{
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const { categoryId } = useParams();
 
     useEffect(() => {
-        if(!categoryId){
-            getProducts().then(response => {
-                setProducts(response)
+        setLoading(true);
+
+        const collectionRef = categoryId
+            ? query(collection(db, 'products'), where('category', '==', categoryId))
+            : collection(db, 'products')
+
+        //traeme los documentos de la colección que está en mi base de datos, puntualmente la colección "products"
+        getDocs(collectionRef).then(response => {
+           const productos = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
             })
-        }else{
-            getProductsCategory(categoryId).then(response => {
-                setProducts(response)
-            })
-        }
+           setProducts (productos)
+        }).catch(error => {
+            console.log(error);
+        }).finally(()=>{
+            setLoading(false);
+        })
+
+        // if(!categoryId){
+        //     getProducts().then(response => {
+        //         setProducts(response)
+        //     })
+        // }else{
+        //     getProductsCategory(categoryId).then(response => {
+        //         setProducts(response)
+        //     })
+        // }
     }, [categoryId])
-    // const newProduct = products.map( product => <p>{product.name}</p>);
+
+    if(loading){
+        return <h1>Cargando...</h1>
+    }
 
     return(
         <div className='ItemList'>
@@ -31,7 +54,6 @@ const ItemListContainer = (props) =>{
             </div> 
             */}
             < ItemList products={products}/>
-
             {/* si quiero escribir código js tengo que abrir llaves */}
             {/*products.map(product => <p key={product.id}>{product.name}</p>) */}
             {/* {newProduct} */}

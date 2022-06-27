@@ -1,6 +1,6 @@
 //Este archivo simula la respuesta de una appi (UNA APPI RETORAN UN JASON)
-
 //array de objetos
+
 const products = [
     { 
         id: '1',
@@ -31,7 +31,6 @@ export const getProductById = (id) =>{
             resolve(products.find(prod => prod.id === id))
         }, 500)
     })
-
 }
 
 export const getProductsCategory = (categoryId) =>{
