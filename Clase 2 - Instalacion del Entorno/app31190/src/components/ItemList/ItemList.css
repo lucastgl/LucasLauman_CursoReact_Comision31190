@@ -2,12 +2,13 @@
     margin-top: 30px;
 }
 
-.List h1{
+.Listh1{
     font-family: 'Courier New', Courier, monospace;
     animation: none;
     font-style: normal;
     font-weight: normal;
     margin-bottom: 30px;
+    background-color: rgba(61, 61, 207, 0.593);
 }
 
 .CardSection{

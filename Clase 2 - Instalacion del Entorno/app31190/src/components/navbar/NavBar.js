@@ -17,6 +17,9 @@ const NavBar = () => {
                 <img src="./images/logo.svg" className="App-logo" alt="logo"></img>
                 <p className="presentation">Powered by React</p>
             </div> */}
+            <div className="divTitle">
+                <h1 className='h1Animado'>MyWay </h1>
+            </div>
             {/* <div className="elementsHead"> */}
                 <div className="Listado">
                     <Link to='/category/Sneakers' className='ListadoHijo'>Sneakers</Link>

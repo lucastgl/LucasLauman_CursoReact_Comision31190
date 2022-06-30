@@ -6,7 +6,7 @@ import FormularioComprador from '../FormularioComprador/FormularioComprador';
 import { Link } from 'react-router-dom'
 import { useContext, useState } from "react";
 import { db, collectionsName } from '../../service/firebase' 
-import { addDoc, collection, updateDoc, doc } from 'firebase/firestore'
+import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 
 const Cart = () => {
 
@@ -22,23 +22,50 @@ const Cart = () => {
     })
 
     const createOrder = () =>{
-        console.log("Crear Orden");
-        
+        // console.log("Crear Orden");
         const objOrder = {
             buyer,
             items: cart,
             total: getTotal()
         }
-        
+
+        const ids = cart.map(prod => prod.id)
         console.log(objOrder);
 
-        const collectionRef = collection(db, 'orders');
+        const batch = writeBatch(db);
+        const outOfStock = [];
 
-        addDoc(collectionRef, objOrder).then(({id}) =>{
-            console.log(`se creó la orden con el id: ${id}`);
-        })
+        const collectionRef2 = collection(db, collectionsName.products)
+        getDocs(query(collectionRef2, where(documentId(), 'in', ids)))
+            .then(response =>{
+                response.docs.forEach(doc =>{
+                    const dataDoc = doc.data();
+                    const prodQuantity = cart.find(prod => prod.id === doc.id)?.cantidad
 
-        cleanCart();
+                    if(dataDoc.stock >= prodQuantity){
+                        batch.update(doc.ref, {stock: dataDoc.stock - prodQuantity})
+                    }else{
+                        outOfStock.push({id: doc.id, ...dataDoc})
+                    }
+                })
+            }).then(()=>{
+                if(outOfStock.length === 0){
+                    const collectionRef = collection(db, collectionsName.orders);
+                    
+                    return addDoc(collectionRef, objOrder)
+                    // addDoc(collectionRef, objOrder).then(({id}) =>{
+                    //     console.log(`se creó la orden con el id: ${id}`);
+                    // })
+                }else{
+                    return Promise.reject({type: 'out_of_stock', products: outOfStock})
+                }
+            }).then(({id}) =>{
+                batch.commit();
+                console.log(`se creó la orden con el id: ${id}`);
+                cleanCart();
+            }).catch(error =>{
+                console.log(error);
+            })
     }
 
     // //Vamos a actualizar el stock del producto que tengo agregado al carrito
@@ -70,14 +97,11 @@ const Cart = () => {
                                 <p>Aún no hay nada por aquí</p>
                                 <Link to='/' className='LinkCartEmpity'>Ver artículos</Link>
                             </div>
-
                 }
             </div>
-            {/* boton provistorio */}
             {/* <button className='BotonActualizar' onClick={updateDocument}>Actualizar</button> */}
         </div>
     )
 }
 
 export default Cart;
-

@@ -56,3 +56,11 @@
     text-align: center;
     font-size: 35px;
 }
+
+.Detalles p{
+    background-color: rgba(61, 61, 207, 0.593);
+}
+
+.Detalles h1{
+    background-color: rgba(25, 25, 128, 0.768);
+}

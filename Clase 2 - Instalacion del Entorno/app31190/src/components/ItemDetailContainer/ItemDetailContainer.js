@@ -5,12 +5,15 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../service/firebase';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 const ItemDetailContainer = () =>{
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    //Para qué se usaba el useParams??
     const { productId } = useParams(); 
 
     useEffect(() => {
@@ -32,7 +35,11 @@ const ItemDetailContainer = () =>{
     }, [productId])
 
     if(loading){
-        return <h1>Cargando...</h1>
+        return (
+            <div className='LoadingContainer'>
+                <FontAwesomeIcon icon={faSpinner} className="LoadingIcon" />
+            </div>
+            )
     }
 
     return(

@@ -4,3 +4,26 @@
     justify-content: center;
     align-items: center;
 }
+
+.LoadingContainer{
+    margin-top: 325px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.LoadingIcon{
+    color: white;
+    font-size: 70px;
+    animation: Load-logo-spin infinite 1s linear;
+}
+
+@keyframes Load-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+     transform: rotate(360deg);
+    }
+} 

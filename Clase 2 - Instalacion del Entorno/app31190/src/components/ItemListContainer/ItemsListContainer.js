@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../service/firebase';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const ItemListContainer = (props) =>{
     const [products, setProducts] = useState([]);

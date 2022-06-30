@@ -1,6 +1,7 @@
 .CarWidget{
     color: #fff;
-
+    text-decoration: none;
+    display: flex;
 }
 
 .cartLogo{
@@ -9,10 +10,8 @@
 
 .CarWidget p{
     margin: 0;
+    background-color: rgb(109, 109, 243);
+    height: 16px;
+    width: 18px;
+    border-radius: 15px;
 }
-
-.carrito{
-    height: 5vh;
-    margin: 0 10px;
-}
-

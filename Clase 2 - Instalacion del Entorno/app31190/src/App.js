@@ -11,9 +11,6 @@ function App() {
   return (
     <div className="App">
         <CartContextProvider>
-          <header className="App-header">
-            <h1 className='h1Animado'>MyWay </h1>
-          </header>
           <BrowserRouter>
             < NavBar />
             <Routes>
