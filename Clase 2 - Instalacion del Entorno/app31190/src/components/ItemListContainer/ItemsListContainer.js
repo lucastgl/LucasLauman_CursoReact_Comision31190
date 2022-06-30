@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../service/firebase';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const ItemListContainer = (props) =>{
     const [products, setProducts] = useState([]);
@@ -43,7 +45,11 @@ const ItemListContainer = (props) =>{
     }, [categoryId])
 
     if(loading){
-        return <h1>Cargando...</h1>
+        return (
+        <div className='LoadingContainer'>
+            <FontAwesomeIcon icon={faSpinner} className="LoadingIcon" />
+        </div>
+        )
     }
 
     return(

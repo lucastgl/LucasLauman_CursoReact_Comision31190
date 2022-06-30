@@ -1,18 +1,12 @@
 .NavBar{
   display: flex;
   align-items: center;
-  background: rgb(84,90,102);
-  background: linear-gradient(0deg, rgba(84,90,102,1) 0%, rgba(40,44,52,1) 52%);
+  background: rgb(42, 49, 65);
   justify-content: space-between;
-  height: 13vh;
+  height: 15vh;
 }
 
 /*logo y texto inferior*/
-.reactHead{
-  margin: 0;
-  width: 20vw;
-}
-
 .empaquetador{
   display: flex;
   flex-direction: column;
@@ -23,7 +17,6 @@
 .App-logo{
   margin-top: 5px;
   height: 50px;
-  width: auto;
 }
 
 .presentation{
@@ -34,21 +27,22 @@
 }
 /*-------------------*/
 
+
+/*lCategorías*/
 .elementsHead{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
+  justify-content: space-around;
   font-size: 30px;
+  flex-grow: 1;
 }
 
 .Listado{
-  color: 
-  rgb(173, 168, 168);
+  flex-grow: 1;
+  color:  rgb(173, 168, 168);
   padding: 0;
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  justify-content: space-around;
 }
 
 .ListadoHijo{
@@ -62,26 +56,19 @@
  font-weight: bolder;
  transition: color 0.3s;
 }
+/*-------------------*/
 
 .divBotones{
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   margin-right: 10px;
   /* width: 20vw; */
 }
 
-.botonNavBar{
-  font-family: 'Courier New', Courier, monospace;
-  margin:  0 10px;
-  border: none;
-  border-radius: 16px;
-  padding: 12px;
-  background: #26a;
+.botonMain{
   color: #fff;
-  text-decoration: none;
-  font-size: 15px;
-  text-align: center;
+  font-size: 30px;
+  margin-right: 20px;
 }
 
 .App-logo {

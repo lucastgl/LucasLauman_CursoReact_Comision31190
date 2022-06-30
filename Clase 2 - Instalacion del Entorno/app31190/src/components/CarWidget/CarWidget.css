@@ -1,14 +1,10 @@
 .CarWidget{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:#26a ;
-    border-radius: 16px;
-    margin-left: 15px;
-    padding-right: 10px;
     color: #fff;
 
+}
+
+.cartLogo{
+    font-size: 30px;
 }
 
 .CarWidget p{
