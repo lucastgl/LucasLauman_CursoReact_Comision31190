@@ -14,7 +14,6 @@ const CarWidget = () => {
     return(
         <Link to='/cart' className='CarWidget'>
             <FontAwesomeIcon icon={faBasketShopping} className="cartLogo" />
-            {/* <img src="https://cdn-icons-png.flaticon.com/512/1077/1077979.png" className="carrito" alt="carrito"></img> */}
             {
                 cart.length > 0
                     ?<p>{quantity}</p>

@@ -1,14 +1,17 @@
-// import { getProducts, getProductsCategory } from '../../asyncmock';
 import './ItemsListContainer.css';
 import ItemList from '../ItemList/ItemList';
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '../../service/firebase';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+
+// import { getDocs, collection, query, where } from 'firebase/firestore';
+// import { db } from '../../service/firebase';
+import { getProducts } from '../../service/firebase/firestore';
+
 const ItemListContainer = (props) =>{
+
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -16,32 +19,27 @@ const ItemListContainer = (props) =>{
 
     useEffect(() => {
         setLoading(true);
-
-        const collectionRef = categoryId
-            ? query(collection(db, 'products'), where('category', '==', categoryId))
-            : collection(db, 'products')
-
-        //traeme los documentos de la colección que está en mi base de datos, puntualmente la colección "products"
-        getDocs(collectionRef).then(response => {
-           const productos = response.docs.map(doc => {
-                return { id: doc.id, ...doc.data()}
-            })
-           setProducts (productos)
-        }).catch(error => {
-            console.log(error);
-        }).finally(()=>{
+        getProducts(categoryId).then(response => {
+            setProducts(response);
+        }).catch(error =>{
+            console.log(error)
+        }).finally(()=> {
             setLoading(false);
         })
+        // const collectionRef = categoryId;
+        //     ? query(collection(db, 'products'), where('category', '==', categoryId))
+        //     : collection(db, 'products')
 
-        // if(!categoryId){
-        //     getProducts().then(response => {
-        //         setProducts(response)
+        // getDocs(collectionRef).then(response => {
+        //    const productos = response.docs.map(doc => {
+        //         return { id: doc.id, ...doc.data()}
         //     })
-        // }else{
-        //     getProductsCategory(categoryId).then(response => {
-        //         setProducts(response)
-        //     })
-        // }
+        //    setProducts (productos)
+        // }).catch(error => {
+        //     console.log(error);
+        // }).finally(()=>{
+        //     setLoading(false);
+        // })
     }, [categoryId])
 
     if(loading){
@@ -54,15 +52,7 @@ const ItemListContainer = (props) =>{
 
     return(
         <div className='ItemList'>
-            {/* 
-            <div className='comingSoon'>
-                <p>{props.greeting}</p>
-            </div> 
-            */}
             < ItemList products={products}/>
-            {/* si quiero escribir código js tengo que abrir llaves */}
-            {/*products.map(product => <p key={product.id}>{product.name}</p>) */}
-            {/* {newProduct} */}
         </div> 
     )
 }

@@ -22,7 +22,6 @@ const Cart = () => {
     })
 
     const createOrder = () =>{
-        // console.log("Crear Orden");
         const objOrder = {
             buyer,
             items: cart,
@@ -51,11 +50,7 @@ const Cart = () => {
             }).then(()=>{
                 if(outOfStock.length === 0){
                     const collectionRef = collection(db, collectionsName.orders);
-                    
                     return addDoc(collectionRef, objOrder)
-                    // addDoc(collectionRef, objOrder).then(({id}) =>{
-                    //     console.log(`se creó la orden con el id: ${id}`);
-                    // })
                 }else{
                     return Promise.reject({type: 'out_of_stock', products: outOfStock})
                 }

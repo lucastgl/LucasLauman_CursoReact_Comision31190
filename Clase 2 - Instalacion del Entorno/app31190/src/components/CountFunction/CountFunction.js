@@ -2,11 +2,6 @@ import { useState, useEffect } from 'react';
 import Button from './Button/Button';
 
 const CountFunction = (props) => {
-    // const state = useState(0);
-    // const count = state[0];
-    // const setCount = state[1];
-
-    //la convención para escribir los que está comentado arriba es..
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -16,7 +11,7 @@ const CountFunction = (props) => {
             console.log("Me ejecuto antes de desmontar el elemento");
         }
 
-    }, [])//sin el array "[]"se ejecuta siempre que se hace re-render, con él, solo se ejecuta una sola vez
+    }, [])
 
     const decrement = () =>{
         setCount(count - 1);
@@ -37,8 +32,6 @@ const CountFunction = (props) => {
             setCount((prev) => prev + 1)
         }
     }
-
-    // console.log("me ejecuto antes del montaje");
     
     return(
         <div style={{display: "flex"}}>
