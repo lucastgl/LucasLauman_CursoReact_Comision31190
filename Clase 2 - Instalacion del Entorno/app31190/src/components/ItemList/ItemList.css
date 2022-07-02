@@ -15,5 +15,5 @@
     display: flex;
     justify-content: space-evenly;
     width: 80vw;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
