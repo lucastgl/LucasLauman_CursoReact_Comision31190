@@ -1,10 +1,36 @@
-.CartTitle{
-    margin-top: 8vh;
+.totalCompra{
+    margin: 50px 0px;
+    background-color: rgba(0, 0, 0, 0.953);
+    box-shadow: 2px 3px 21px 23px rgba(0,0,0,0.95);
 }
 
-p{
+.totalCompra p{
+    font-size: 2.5em;
+    font-weight: 600;
     text-align: center;
     color: white;
+}
+
+.orderGeneratorContainer{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.orderGeneratorContainer button{
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px 0;
+    border: none;
+    border-radius: 16px;
+    padding: 12px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    box-shadow:  1px 7px 4px -2px rgba(197, 192, 192, 0.75);
+}
+
+.orderGeneratorContainer button:hover{
+    box-shadow: 1px 7px 24px 3px rgba(197, 192, 192, 0.767);
+    transition: 0.1s;
 }
 
 .CartItemContainer{
@@ -18,15 +44,25 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 80vh;
+    justify-content: center;
+}
+
+.CartEmpity p{
+    font-size: 3em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.753);
+    box-shadow: 2px 3px 21px 23px rgba(0,0,0,0.75);
 }
 
 .LinkCartEmpity{
     text-decoration: none;
     color: white;
     background-color:rgb(40, 42, 44);
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     margin-top: 10px;
+    font-size: 1.5em;
 }
 
 form{

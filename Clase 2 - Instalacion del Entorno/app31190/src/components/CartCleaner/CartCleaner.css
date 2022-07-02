@@ -7,18 +7,20 @@
 .VaciarCarrito{
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 10px 0px;
-    background-color: aliceblue;
+    background-color: antiquewhite;
     border-radius: 16px;
     border-style: none;
 }
 
 .VaciarCarrito p{
-    color: black;
+    color: rgb(102, 18, 18); 
+    font-size: 1.5em;
+    margin: 10px 0px;
 }
 
 .VaciarCarrito .tacho{
-    margin-left: 5px;
-    height: 3vh;
+    font-size: 1.5em;
+    margin: 10px 10px;
+    color: rgb(102, 18, 18); 
 }

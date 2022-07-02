@@ -68,30 +68,29 @@ const Cart = () => {
             })
     }
 
-    // //Vamos a actualizar el stock del producto que tengo agregado al carrito
-    // const updateDocument = () => {
-    //     // selecciono el id del primer artículo de mi carrito
-    //     const  id = cart[0].id;
-    //     //llamo al documento en db en la lista doc con el id, "id".
-    //     const docRef = doc(db, 'products', id);
-    //     updateDoc(docRef, {stock: 1000})
-    // }
-
     return(
-        <div>
-            <h1 className='CartTitle'>Cart</h1>
             <div className='CartItemContainer'>
+                {
+                    cart.length > 0
+                        ? <div>
+                            <CartCleaner cart={cart}/>
+                         </div>
+                        :
+                         <></>
+                }
+
                 {cart.map(prod => <CartItem key={prod.id} {...prod}/>)}
                 
                 {
                     cart.length > 0
                         ?   <div>
-                                <p> Total de la compra: {totalCompra}$</p>
-                                <CartCleaner cart={cart}/>
-
+                                <div className='totalCompra'>
+                                    <p> Total: {totalCompra}$</p>
+                                </div>
                                 <FormularioComprador buyer={buyer} setBuyer={setBuyer}/>
-
-                                <button onClick={createOrder}>Generar orden</button>
+                                <div className='orderGeneratorContainer'>
+                                    <button onClick={createOrder}>Generar orden</button>
+                                </div>
                             </div>
                         :   <div className='CartEmpity'>
                                 <p>Aún no hay nada por aquí</p>
@@ -99,8 +98,6 @@ const Cart = () => {
                             </div>
                 }
             </div>
-            {/* <button className='BotonActualizar' onClick={updateDocument}>Actualizar</button> */}
-        </div>
     )
 }
 

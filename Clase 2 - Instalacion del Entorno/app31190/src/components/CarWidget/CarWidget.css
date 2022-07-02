@@ -2,6 +2,8 @@
     color: #fff;
     text-decoration: none;
     display: flex;
+    margin-right: 60px;
+    margin-left: 30px;
 }
 
 .cartLogo{
@@ -10,6 +12,8 @@
 
 .CarWidget p{
     margin: 0;
+    text-align: center;
+    padding: 2px;
     background-color: rgb(109, 109, 243);
     height: 16px;
     width: 18px;

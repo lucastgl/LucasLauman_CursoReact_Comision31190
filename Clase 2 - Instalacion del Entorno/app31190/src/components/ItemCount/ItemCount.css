@@ -1,22 +1,11 @@
-.Item{
-    display: flex;
-    justify-content: center;
-
-}
-
-.PrototypeItemContainer{
+.ContadorArticulo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    /* width: 20vw; */
-    /* border-radius: 16px; */
-}
 
-/* .titleProduct{
-    margin: 10px 0 0 0;
-} */
+}
 
 .bloqueContador{
     display: flex;
@@ -26,22 +15,29 @@
 }
 
 .cifraContador{
-    background-color: antiquewhite;
-    color: black;
+    font-size: 1.5em;
+    font-family: 'Splash', cursive;
+    font-weight: 400;
+    color: rgb(126, 201, 245);;
     text-align: center;
-    border-radius: 15px;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 5px 0px 10px;
     padding: 0 30px;
     
 }
 
 .agregarCarritoButton{
+    font-family: 'Montserrat', sans-serif;
     margin: 5px 0;
-    font-family: 'Courier New', Courier, monospace;
     border: none;
     border-radius: 16px;
-    width: 50%;
     padding: 12px;
-    background: #26a;
-    color: #fff;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    box-shadow:  1px 7px 4px -2px rgba(197, 192, 192, 0.75);
+}
+
+.agregarCarritoButton:hover{
+    box-shadow: 1px 7px 24px 3px rgba(197, 192, 192, 0.767);
+    transition: 0.1s;
 }

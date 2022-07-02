@@ -1,6 +1,8 @@
 import './CartCleaner.css'
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 const CartCleaner = () => {
 
@@ -10,7 +12,7 @@ const CartCleaner = () => {
         <div className='VaciarCarritoContainer'>
             <button onClick={() => cleanCart()} className='VaciarCarrito'>
                 <p>Vaciar Carrito</p>
-                <img src='./images/reciclaje.png' alt="imagen del teacho" className='tacho'/>
+                <FontAwesomeIcon icon={faTrashCan} className='tacho'/>
             </button>
         </div>
     )

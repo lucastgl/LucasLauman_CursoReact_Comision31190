@@ -19,7 +19,9 @@ const ItemDetail = ({id, name, img, stock, material, origen, price}) =>{
 
     return(
         <div className='ListDetail'>
-            <h2>Detalles del Artículos</h2>
+            <div className='ListDetailh2Container'>
+                <h2>Detalles del Artículo</h2>
+            </div>
             <div className='CardSectionOfDetail'>
                 <div className='ShowAndSelection'>
                     <img src={img} alt='imagen del artículo'></img>
@@ -30,8 +32,8 @@ const ItemDetail = ({id, name, img, stock, material, origen, price}) =>{
                 <div className='Detalles'>
                     <h1>{name}</h1>
                     <p> MATERIAL: {material}</p>
-                    <p> MADE IN {origen}</p>
-                    <p> PRICE: {price}</p>
+                    <p> ORIGEN: {origen}</p>
+                    <p> PRECIO: {price}</p>
                 </div>
             </div>
         </div>
