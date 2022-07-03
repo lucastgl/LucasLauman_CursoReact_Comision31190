@@ -4,10 +4,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-
-// import { db, collectionsName } from '../../service/firebase';
-// import { getDoc, doc } from 'firebase/firestore';
-
 import { getProductsId } from '../../service/firebase/firestore';
 
 const ItemDetailContainer = () =>{
@@ -25,14 +21,6 @@ const ItemDetailContainer = () =>{
         }).finally(()=>{
             setLoading(false);
         })
-        // getDoc(doc(db, collectionsName.products, productId)).then(response => {
-        //     const producto = {id: response.id, ...response.data()}
-        //     setProduct(producto)
-        // }).catch(error => {
-        //     console.log(error);
-        // }).finally(()=>{
-        //     setLoading(false);
-        // })
     }, [productId])
 
     if(loading){

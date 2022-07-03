@@ -10,8 +10,6 @@ import { useNotification } from '../../notification/Notification';
 import { db, collectionsName } from '../../service/firebase' 
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 
-// import { generateOrder } from '../../service/firebase/firestore';
-
 const Cart = () => {
     const { setNotification } = useNotification()
     const { cart, getTotal, cleanCart } = useContext(CartContext);
@@ -25,8 +23,6 @@ const Cart = () => {
         address: '',
         comment: ''
     })
-
-    // generateOrder(totalCompra, buyer, navigate)
 
     const createOrder = () =>{
         const objOrder = {
