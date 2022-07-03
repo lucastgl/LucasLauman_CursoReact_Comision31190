@@ -5,11 +5,15 @@ import CartCleaner from '../CartCleaner/CartCleaner';
 import FormularioComprador from '../FormularioComprador/FormularioComprador';
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useState } from "react";
+import { useNotification } from '../../notification/Notification';
+
 import { db, collectionsName } from '../../service/firebase' 
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 
-const Cart = () => {
+// import { generateOrder } from '../../service/firebase/firestore';
 
+const Cart = () => {
+    const { setNotification } = useNotification()
     const { cart, getTotal, cleanCart } = useContext(CartContext);
     const totalCompra = getTotal();
     const navigate = useNavigate()
@@ -22,20 +26,21 @@ const Cart = () => {
         comment: ''
     })
 
+    // generateOrder(totalCompra, buyer, navigate)
+
     const createOrder = () =>{
         const objOrder = {
             buyer,
             items: cart,
-            total: getTotal()
+            total: totalCompra
         }
 
         const ids = cart.map(prod => prod.id)
-        console.log(objOrder);
 
         const batch = writeBatch(db);
         const outOfStock = [];
-
         const collectionRef2 = collection(db, collectionsName.products)
+        
         getDocs(query(collectionRef2, where(documentId(), 'in', ids)))
             .then(response =>{
                 response.docs.forEach(doc =>{
@@ -57,11 +62,12 @@ const Cart = () => {
                 }
             }).then(({id}) =>{
                 batch.commit();
-                console.log(`se creó la orden con el id: ${id}`);
                 cleanCart();
+                setNotification('success',`se creó la orden con el id: ${id}`);
                 navigate('/')
             }).catch(error =>{
                 console.log(error);
+                setNotification('error', `No hay stock suficiente para cubrir la orden de algunos artículos`)
             })
     }
 

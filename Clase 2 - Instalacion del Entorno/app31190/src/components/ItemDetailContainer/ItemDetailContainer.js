@@ -2,10 +2,13 @@ import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getDoc, doc } from 'firebase/firestore';
-import { db, collectionsName } from '../../service/firebase';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
+// import { db, collectionsName } from '../../service/firebase';
+// import { getDoc, doc } from 'firebase/firestore';
+
+import { getProductsId } from '../../service/firebase/firestore';
 
 const ItemDetailContainer = () =>{
     const [product, setProduct] = useState([]);
@@ -14,14 +17,22 @@ const ItemDetailContainer = () =>{
     const { productId } = useParams(); 
 
     useEffect(() => {
-        getDoc(doc(db, collectionsName.products, productId)).then(response => {
-            const producto = {id: response.id, ...response.data()}
-            setProduct(producto)
-        }).catch(error => {
+
+        getProductsId(productId).then(response =>{
+            setProduct(response);
+        }).catch(error =>{
             console.log(error);
         }).finally(()=>{
             setLoading(false);
         })
+        // getDoc(doc(db, collectionsName.products, productId)).then(response => {
+        //     const producto = {id: response.id, ...response.data()}
+        //     setProduct(producto)
+        // }).catch(error => {
+        //     console.log(error);
+        // }).finally(()=>{
+        //     setLoading(false);
+        // })
     }, [productId])
 
     if(loading){
