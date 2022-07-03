@@ -3,7 +3,7 @@ import CartContext from "../../context/CartContext";
 import CartItem from '../CartItem/CartItem';
 import CartCleaner from '../CartCleaner/CartCleaner';
 import FormularioComprador from '../FormularioComprador/FormularioComprador';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useState } from "react";
 import { db, collectionsName } from '../../service/firebase' 
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
@@ -12,6 +12,7 @@ const Cart = () => {
 
     const { cart, getTotal, cleanCart } = useContext(CartContext);
     const totalCompra = getTotal();
+    const navigate = useNavigate()
 
     const [ buyer , setBuyer ] = useState({
         name: '',
@@ -58,6 +59,7 @@ const Cart = () => {
                 batch.commit();
                 console.log(`se creó la orden con el id: ${id}`);
                 cleanCart();
+                navigate('/')
             }).catch(error =>{
                 console.log(error);
             })

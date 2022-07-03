@@ -3,7 +3,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../service/firebase';
+import { db, collectionsName } from '../../service/firebase';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,7 +14,7 @@ const ItemDetailContainer = () =>{
     const { productId } = useParams(); 
 
     useEffect(() => {
-        getDoc(doc(db, 'products', productId)).then(response => {
+        getDoc(doc(db, collectionsName.products, productId)).then(response => {
             const producto = {id: response.id, ...response.data()}
             setProduct(producto)
         }).catch(error => {
