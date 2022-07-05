@@ -49,3 +49,7 @@ In category, the possible fields are "Sneakers", "Joggers" and "Hodies".
 - [Create-React-App](https://create-react-app.dev/)
 - [Firebase](https://firebase.com)
 - [Font Awesome](https://fontawesome.com/kits)
+
+## Demonstration of purchase
+
+![](DemoDeCompra.gif)
