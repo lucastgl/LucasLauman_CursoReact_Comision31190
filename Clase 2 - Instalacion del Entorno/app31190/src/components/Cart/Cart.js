@@ -35,6 +35,7 @@ const Cart = () => {
 
         const batch = writeBatch(db);
         const outOfStock = [];
+        
         const collectionRef2 = collection(db, collectionsName.products)
         
         getDocs(query(collectionRef2, where(documentId(), 'in', ids)))
