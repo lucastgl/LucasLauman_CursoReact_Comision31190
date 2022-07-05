@@ -16,12 +16,12 @@ $ npm start
 This project uses firebase. In the service/firebase directory, inside the index.js file, you 
 will find that the configuration variables have the following constants:
 
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId
+  - apiKey: process.env.REACT_APP_apiKey,
+  - authDomain: process.env.REACT_APP_authDomain,
+  - projectId: process.env.REACT_APP_projectId,
+  - storageBucket: process.env.REACT_APP_storageBucket,
+  - messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  - appId: process.env.REACT_APP_appId
 
 For security reasons the original .env file was not pushed, but we can find the .env.example. 
 In this file we can find the same constants which can be filled with data from a new database for testing. 
